@@ -1,0 +1,25 @@
+	h1,h2,h3{
+			color:red;background-color:pink;text-align:center;
+		}
+		
+		.test1{
+			background-color:blue;
+			color:pink;
+		}
+		
+		.textcenter{
+			text-align:center;
+			text-decoration:underline;
+			text-transform:uppercase;
+		}
+		
+		#demo1{
+			background-color:green;
+			color:blue;
+		}
+		
+		h5.mystyle{
+			color:yellow;
+			background-color:red;
+		}
+		
