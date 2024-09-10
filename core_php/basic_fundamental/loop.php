@@ -32,13 +32,11 @@ foreach()
 */
 
 // While()
-
 /*
-
 $i=1;
 while($i<=10)
 {
-	echo $i;
+	echo $i."<br>";
 	$i++;
 }
 */
@@ -75,15 +73,16 @@ do
 // break
 
 
-
+/*
 for($a=1;$a<=100;$a++)
 {
-	if($a==61)
+	if($a==50)
 	{
 		break;
 	}
     echo $a."<br>";		
 }
+*/
 
 
 

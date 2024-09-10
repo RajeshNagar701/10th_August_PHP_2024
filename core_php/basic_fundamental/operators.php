@@ -5,6 +5,7 @@ operators
 Arithmetic operators    + - * / %   10/2=5   10%2=0
 
 Assignment operators    =     += -= *= /=  %=   $a=10;  $a+=10  $a=$a+10    $a-=$b  $a=$a-$b
+
 Comparison operators    == === > < >= <= !=
 
 Increment/Decrement operators    ++    --  a=10 a++ echo 
@@ -40,17 +41,16 @@ echo $x;
 //increement & decrimrent  ++ --
 
 /*
-
 $a=5;
 $a++;
 $a++;
-echo "increement value of a++ :".$a."<br>";
+echo $a."<br>";
 
 $b=10;
 $b--;
-echo "decreement value is a-- :".$b; 
-
+echo $b."<br>";
 */
+
 
 
 // comparision operators   == > < >= <= ===
@@ -91,12 +91,12 @@ else
 
 
 //logical operators   &&  ||   !
-
+/*
 $a=5;
 $b=10;
 $c=2;
 
-if($a<$b && $a<$c)   // !($a>$b)
+if(!($a<$b && $a<$c))   // !($a>$b)
 {
 	echo "both condition true";
 }
@@ -105,7 +105,7 @@ else
 	echo "Not Condition true";
 }
 
-
+*/
 
 
 
@@ -117,16 +117,14 @@ $a="Raj";
 echo "Hello" . $a . "<br>";
 
 $name="nagar";
-$name.=" raj";
-$name.=" N";
 
+$name.=" Rajesh";
 
+echo $name;
 
 // conditional operators / turnory 
 
-/*
 $age=18;
-
 if($age>18)
 {
 	echo "Man";
@@ -136,13 +134,12 @@ else
 	echo "Child";
 }
 
-*/
 
 
 
 // turnory operator conditional( ? : )   (cond)? yes : No
-//$age=18;
-//echo $ans=($age>=18)? "Man" : "Child";  // codition ? "yes":"no";   ?:
+$age=18;
+echo $ans=($age>=18)? "Man" : "Child";  // codition ? "yes":"no";   ?:
 
 
 ?>
