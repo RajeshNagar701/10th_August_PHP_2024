@@ -2,23 +2,24 @@
 
 // include work as include file code 
 
-include('include545.php');
+/*
+include('include1.php');
 include('include1.php');
 include('include1.php');
 echo "Morning";  
-
+*/
 
 
 // include_once same as include() but only include 1 time
 
 // if file does not exits than iclude provide warning 
 
-/*
-include_once('include1.php');
+
+include_once('include.php');
 include_once('include1.php');
 include_once('include1.php');
 echo "Morning";
-*/
+
 
 
 

@@ -3,21 +3,21 @@
 // require work as require file code
 
 
-
-require('Require154.php'); 
+/*
+require('Require1.php'); 
 require('Require1.php');
 require('Require1.php');
 echo "Morning";  
-
+*/
 
 // require_once same as require() but only require 1 time
 
-/*
-require_once('Require1.php');
+
+require_once('Require.php');
 require_once('Require1.php');
 require_once('Require1.php');
 echo "Morning";
-*/
+
 
 
 

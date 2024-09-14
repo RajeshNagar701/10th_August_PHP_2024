@@ -1,6 +1,6 @@
 <?php
 
-// echo & print() work as print statement but some differances here
+// echo "" & print("") work as print statement but some differances here
 
 // speed: echo fast
 

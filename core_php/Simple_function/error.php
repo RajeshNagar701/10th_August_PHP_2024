@@ -11,24 +11,18 @@
 $a=10;
 $b=20;
 
-echo $A;
+echo $c;
 echo $b."<BR>";
 echo "Hello";
 */
 
-
-// 2) syntex/perse error:  syntex problem like ; {} <?php unwanted code  // stop/terminate all script  
-
-
-/*
+// 2) syntex/perse error:  syntex problem like ; {} <?php  ) unwanted code  // stop/terminate all script  
 
 $a=10;
 $b=20;
 echo $a
 echo $b;
 echo "Hello";
-
-*/
 
 
 //3) warning  : if you include any non existing file than warning occures 
@@ -39,7 +33,6 @@ include('include2.php');    // not terminate script
 echo "Hello";
 echo "Hello";
 */
-
 
 
 

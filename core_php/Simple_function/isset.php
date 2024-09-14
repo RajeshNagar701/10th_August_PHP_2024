@@ -2,19 +2,18 @@
 
 
 // check value of variable is set or not
-$p;  
+$p=20;  
 
 
 //echo isset($p)
 
 if(isset($p))
 {
-	echo " var is set ";
+	echo "Value set";
 }
 else
 {
-	echo " var is not set ";
-}	
-
+	echo "Value not set";
+}
 
 ?>

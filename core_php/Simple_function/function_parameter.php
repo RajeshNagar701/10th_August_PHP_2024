@@ -11,17 +11,6 @@ sum(50,7);
 sum(5,70);
 */
 
-// Default argument
-
-
-function deafault($name="Unknown")
-{
-echo "My Name is : ".$name."<br>";
-}
-//deafault();
-//deafault('Raj');
-deafault(null);
-
 
 
 ?>
