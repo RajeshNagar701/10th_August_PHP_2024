@@ -1,12 +1,16 @@
 <?php
 date_default_timezone_set('asia/calcutta');
 
-// time() print unix time-stamp 1, jan 1970
-echo time()+(1*60*60) ;
 
-$onehour=time()+(1*60*60); 
-$oneday=time()+(24*60*60);
+// 1st Jan,1970 seconds starts unix timestamp
 
-echo "<br>" . date('h:i:s a',$onehour);
-echo "<br>" . date('d/m/y',$oneday);
+echo time() . "<br>";
+
+
+
+$hours=time()+ (2 * 60 * 60);
+echo date('h:i:s A',$hours)."<br>";
+
+$date=time()+ (2 * 24 * 60 * 60);
+echo date('d/m/y',$date)."<br>";
 ?>

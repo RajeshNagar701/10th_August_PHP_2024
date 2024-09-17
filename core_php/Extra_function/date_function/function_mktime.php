@@ -1,7 +1,7 @@
 <?php
 
-// mktime(0,0,0,date("m")+2,date("d"),date("y"))  
-
+// mktime(0,0,0,date("m")+2,date("d"),date("y"))   // date
+// mktime(date("h")+2,date("i"),date("s"))   // date
 
 date_default_timezone_set('asia/calcutta');
 

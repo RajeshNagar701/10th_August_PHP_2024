@@ -5,6 +5,7 @@ date('d-m-y');   // print today current date
 date('h-i-s a');   // print today current dat
 
 
+
 d - The day of the month (from 01 to 31)
 D - A textual representation of a day (three letters)
 j - The day of the month without leading zeros (1 to 31)
