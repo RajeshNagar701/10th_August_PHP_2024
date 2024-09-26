@@ -4,7 +4,7 @@ $a=array("a"=>"KEYUR","b"=>"JIGNESH","C"=>"DEVANSH"); // saprate key and value 1
 print_r($a);
 
 echo "<br>";
-print_r(array_keys($a));
+print_r(array_keys($a)); // arr of keys
 echo "<br>";
-print_r(array_values($a))
+print_r(array_values($a)) // arr of values
 ?>

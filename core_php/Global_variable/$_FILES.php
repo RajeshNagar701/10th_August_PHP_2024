@@ -19,10 +19,19 @@ if(isset($_POST['submit']))
 	echo $username=$_POST['username']."<br>";
 	echo $img=$_FILES['file1']['name'];
 	
-		// upload img in folder
-		$path='img/upload/'.$img;     // path
-		$dupimg=$_FILES['file1']['tmp_name'];  // duplicate imag get
-		move_uploaded_file($dupimg,$path);  // move duplicate img in path
+	// image upload
+	$path="img/upload/".$img;
+	$tmp_img=$_FILES['file1']['tmp_name'];
+	move_uploaded_file($tmp_img,$path);
+	
+	
+	// view 
+	if($_FILES['file1']['size']>0)
+	{
+	?>
+		<img src='img/upload/<?php echo $img?>'>
+	<?php
+	}
 }
 
 ?>

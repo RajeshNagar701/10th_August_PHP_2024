@@ -23,6 +23,17 @@ $_SESSION
 */
 //echo $a=10;
 
+/*
+function addition()    // define variable as super global use any were in program;
+{
+	$x=10; // local
+	$y=45;		
+	echo $z=$x+$y . "<br>"; 
+}
+addition();
+echo $z;  // error not access private var
+
+*/
 function addition()    // define variable as super global use any were in program;
 {
 	$x=10; // local
@@ -30,10 +41,7 @@ function addition()    // define variable as super global use any were in progra
 	echo $GLOBALS['z']=$x+$y . "<br>";  // CONVERT LOCAL TO GLOBAL
 }
 addition();
-
-echo $z;
-
-
+echo $z;   //work 
 
 
 

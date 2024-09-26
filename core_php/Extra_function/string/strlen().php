@@ -1,6 +1,8 @@
 <?php
-echo $txt ="TOPS Technologies";
 
 
-echo "the length is :".strlen($txt); // define count string words
+$txt ="TOPS Technologies";
+
+
+echo strlen($txt); // define count string words
 ?>

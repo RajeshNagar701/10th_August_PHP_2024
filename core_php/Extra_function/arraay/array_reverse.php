@@ -1,4 +1,4 @@
 <?php
-$a=array("b"=>"CAT","a"=>"TIGER","c"=>"DOG"); // REVERSE array by key decending order
+$a=array("b"=>"CAT","a"=>"TIGER","c"=>"DOG"); // ("c"=>"DOG","a"=>"TIGER","b"=>"CAT");
 print_r(array_reverse($a));  // only reverse 
 ?>

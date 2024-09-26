@@ -12,13 +12,13 @@ Method  get => $_GET['']
     
 	<p>Name: <input type="text" name="name"/></p>
 	<p>Age: <input type="text" name="age"/></p>
-	<p><input type="submit" name="submit" value="Click"/></p>
+	<p><input type="submit" name="save" value="Click"/></p>
 	
 </form>
 
 
 <?php
-	if(isset($_GET['submit']))
+	if(isset($_GET['save']))
 	{
 		echo $name=$_GET['name'];
 		echo $age=$_GET['age'];
