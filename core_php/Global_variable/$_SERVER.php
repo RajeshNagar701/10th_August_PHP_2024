@@ -24,11 +24,4 @@ echo $_SERVER['HTTP_REFERER']."<br>";
 
 
 
-session_start();
-
-
-echo "<h1>".$_SESSION['user']."</h1>";
-
-echo "<h1>".$_COOKIE['user']."</h1>";
-
 ?>

@@ -17,6 +17,12 @@
 </body>
 </html>
 <?php
+
+session_start();
+
+echo $_SESSION['user'];
+echo $_COOKIE['user']; 
+
 if(isset($_REQUEST['sum']))
 {
 	$num1=$_REQUEST['num1'];
@@ -45,3 +51,6 @@ if(isset($_REQUEST['div']))
 }
 
 ?>
+
+
+
