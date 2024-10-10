@@ -123,11 +123,11 @@ class abc
 	}
 	function multi()
 	{
+		$this->sum()
 		echo $this->a*$this->b;
 	}
 }
 
 $obj=new abc;
-$obj->sum();
 $obj->multi();
 

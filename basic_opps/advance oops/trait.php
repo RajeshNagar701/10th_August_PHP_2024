@@ -2,7 +2,7 @@
 
 /*
 
-PHP only supports single inheritance: 
+PHP 5 only supports single inheritance: 
 
 a child class can inherit only from one single parent.
 So, what if a class needs to inherit multiple behaviors? 

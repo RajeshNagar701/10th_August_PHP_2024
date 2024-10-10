@@ -1,5 +1,13 @@
 <?php
 /*
+
+
+static keyword
+value changeble
+public visiblity
+call by ::
+call withaout object
+
 Static properties can be called directly - 
 without creating an instance(object) of a class.
 Static properties are declared with the static keyword:

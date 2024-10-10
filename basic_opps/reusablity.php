@@ -8,8 +8,8 @@ It is a concept of accessing the features of one class from another class.
 types
 
 Single-level inheritance.
-
 Multi-level inheritance.
+
 Multiple inheritance.
 Hierarchical Inheritance.
 Hybrid Inheritance.
@@ -25,16 +25,15 @@ class model
 		echo $sum=$this->a+$this->b."<br>";
 	}
 }
-
 class control extends model
 {
 	function multi()
 	{
+		$this->sum();
 		echo $this->a*$this->b;
 	}
 }
 $obj=new control;
-$obj->sum();
 $obj->multi();
 
 
@@ -72,7 +71,7 @@ obj: c
 
 =================================
 
-3) Multiple inheritance.
+3) Multiple inheritance.  Not possible in PHP
 
 class a
 {

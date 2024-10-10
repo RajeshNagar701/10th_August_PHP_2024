@@ -1,6 +1,6 @@
 <?php
 
-// use ful in reduce reusable code and remove inheritance multiple
+// useful in reduce reusable code and remove inheritance multiple
 
 
 trait abc

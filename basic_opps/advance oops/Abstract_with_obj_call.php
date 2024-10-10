@@ -36,7 +36,10 @@ class B extends A
 }
 class C extends A
 {
-	
+	function foo()                  // allways listern abstract method in main class must used in extend class like B & C
+	{
+		echo "This is B class foo method";
+	}
 }
 $c=new c();    // call all method by obj
 

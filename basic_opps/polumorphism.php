@@ -53,7 +53,7 @@ class xyz extends abc
 {
 	function sum($a,$b)
 	{
-		abc::sum(5,6);
+		abc::sum(5,6);  // when we go for overrinding otherwise use $this->sum()
 		echo $a*$b;
 	}
 }
