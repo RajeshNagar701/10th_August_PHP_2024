@@ -66,17 +66,17 @@ function active($currect_page){
                         <div class="main-menu d-none d-lg-block">
                             <nav> 
                                 <ul id="navigation">                                                                                          
-                                    <li class="<?php echo active('index.php')?>"><a href="index.php">Home</a></li>
-                                    <li class="<?php echo active('about.php')?>"><a href="about.php">About</a></li>
-                                    <li class="<?php echo active('services.php')?>"><a href="services.php">Services</a></li>
-                                    <li class="<?php echo active('blog.php')?>"><a href="blog.php">Blog</a>
+                                    <li class="<?php echo active('index')?>"><a href="index">Home</a></li>
+                                    <li class="<?php echo active('about')?>"><a href="about">About</a></li>
+                                    <li class="<?php echo active('services')?>"><a href="services">Services</a></li>
+                                    <li class="<?php echo active('blog')?>"><a href="blog">Blog</a>
                                         <ul class="submenu">
-                                            <li class="<?php echo active('blog.php')?>"><a href="blog.php">Blog</a></li>
-                                            <li class="<?php echo active('blog_details.php')?>"><a href="blog_details.php">Blog Details</a></li>
+                                            <li class="<?php echo active('blog')?>"><a href="blog">Blog</a></li>
+                                            <li class="<?php echo active('blog_details')?>"><a href="blog_details">Blog Details</a></li>
                                         
                                         </ul>
                                     </li>
-                                    <li class="<?php echo active('contact.php')?>"><a href="contact.php">Contact</a></li>
+                                    <li class="<?php echo active('contact')?>"><a href="contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -84,7 +84,7 @@ function active($currect_page){
                 </div> 
                 <div class="header-right d-none d-lg-block">
                     <a href="#" class="header-btn1"><img src="assets/img/icon/call.png" alt=""> (91) 972 204-1171</a>
-                    <a href="login.php" class="header-btn2">Login</a>
+                    <a href="login" class="header-btn2">Login</a>
                 </div>
                 <!-- Mobile Menu -->
                 <div class="col-12">

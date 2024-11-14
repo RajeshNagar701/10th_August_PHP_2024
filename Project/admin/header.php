@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Panel</a>
+                <a class="navbar-brand" href="dashboard">Admin Panel</a>
             </div>
 
             <div class="header-right">
@@ -56,17 +56,17 @@
 
 
                     <li>
-                        <a class="active-menu" href="dashboard.php"><i class="fa fa-dashboard "></i>Dashboard</a>
+                        <a class="active-menu" href="dashboard"><i class="fa fa-dashboard "></i>Dashboard</a>
                     </li>
           
                      <li>
                         <a href="#"><i class="fa fa-yelp "></i>Categories<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_categories.php"><i class="fa fa-square-o"></i>Add</a>
+                                <a href="add_categories"><i class="fa fa-square-o"></i>Add</a>
                             </li>
                             <li>
-                                <a href="manage_categories.php"><i class="fa fa-square-o "></i>Manage</a>
+                                <a href="manage_categories"><i class="fa fa-square-o "></i>Manage</a>
                             </li>
           
                         </ul>
@@ -76,38 +76,38 @@
                         <a href="#"><i class="fa fa-yelp "></i>Product<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_product.php"><i class="fa fa-square-o"></i>Add</a>
+                                <a href="add_product"><i class="fa fa-square-o"></i>Add</a>
                             </li>
                             <li>
-                                <a href="manage_product.php"><i class="fa fa-square-o "></i>Manage</a>
+                                <a href="manage_product"><i class="fa fa-square-o "></i>Manage</a>
                             </li>
           
                         </ul>
                     </li>	
 					
                     <li>
-                        <a href="manage_contact.php"><i class="fa fa-yelp "></i>Contact</a>
+                        <a href="manage_contact"><i class="fa fa-yelp "></i>Contact</a>
                     </li>
 					<li>
-                        <a href="manage_customer.php"><i class="fa fa-yelp "></i>Customer</a>
+                        <a href="manage_customer"><i class="fa fa-yelp "></i>Customer</a>
                     </li>
 					<li>
-                        <a href="manage_cart.php"><i class="fa fa-yelp "></i>Cart</a>
+                        <a href="manage_cart"><i class="fa fa-yelp "></i>Cart</a>
                     </li>
 					<li>
-                        <a href="manage_order.php"><i class="fa fa-yelp "></i>Order</a>
+                        <a href="manage_order"><i class="fa fa-yelp "></i>Order</a>
                     </li>
 					<li>
-                        <a href="manage_feedback.php"><i class="fa fa-yelp "></i>Feedback</a>
+                        <a href="manage_feedback"><i class="fa fa-yelp "></i>Feedback</a>
                     </li>
 					 <li>
                         <a href="#"><i class="fa fa-yelp "></i>Employee<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_employee.php"><i class="fa fa-square-o"></i>Add</a>
+                                <a href="add_employee"><i class="fa fa-square-o"></i>Add</a>
                             </li>
                             <li>
-                                <a href="manage_employee.php"><i class="fa fa-square-o "></i>Manage</a>
+                                <a href="manage_employee"><i class="fa fa-square-o "></i>Manage</a>
                             </li>
           
                         </ul>

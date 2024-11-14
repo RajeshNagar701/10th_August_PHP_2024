@@ -46,7 +46,7 @@ include_once('header.php');
                                 <button type="submit" class="button button-contactForm boxed-btn">Login</button>
 								<br>
 								<br>
-								<a href="signup.php" class="ms-5 text-primary">If Not Regisrtered then Signup Here</a>
+								<a href="signup" class="ms-5 text-primary">If Not Regisrtered then Signup Here</a>
 							</div>
                         </form>
                     </div>
