@@ -22,24 +22,31 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>#ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Comment</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+									<?php
+									foreach($contct_arr as $data)
+									{
+									?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <td><?php echo $data->id?></td>
+                                            <td><?php echo $data->name?></td>
+                                            <td><?php echo $data->email?></td>
+                                            <td><?php echo $data->comment?></td>
 											<td>
 												<a href="" class="btn btn-primary">Edit</a>
 												<a href="" class="btn btn-danger">Delete</a>
 											</td>
                                         </tr>
+									<?php
+									}
+									?>	
                                        
                                     </tbody>
                                 </table>

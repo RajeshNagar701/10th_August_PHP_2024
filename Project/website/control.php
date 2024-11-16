@@ -2,9 +2,13 @@
 
 <?php
 
-class control{
+include_once('model.php');  // step 1 load model in controller so you can call logic function
+
+class control extends model{  // extend mnodel class so yu can access function
 	
 	function __construct(){
+		
+		model::__construct();  // call model __construct for db connectivity
 		
 		$path=$_SERVER['PATH_INFO'];
 		
@@ -19,6 +23,7 @@ class control{
 			break;
 			
 			case '/services':
+				
 				include_once('services.php');
 			break;
 			
