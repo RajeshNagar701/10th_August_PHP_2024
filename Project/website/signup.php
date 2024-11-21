@@ -26,7 +26,7 @@ include_once('header.php');
                         <h2 class="contact-title">Signup Here</h2>
                     </div>
                     <div class="col-lg-12">
-                        <form enctype="multipart/form-data" class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
+                        <form enctype="multipart/form-data" class="form-contact contact_form" action="" method="post" >
                             <div class="row">
                                
 								<div class="col-sm-12">
@@ -63,9 +63,14 @@ include_once('header.php');
 									<div class="form-group">
 										<select name="cid" class="form-select">
 										  <option>Select Country</option>
-										  <option>India</option>
-										  <option>Japan</option>
-										  <option>Rasia</option>
+										 <?php
+										 foreach($country as $c)
+										 {
+										 ?>
+										 <option value="<?php echo $c->id;?>"><?php echo $c->cnm;?></option>
+										 <?php		
+										 }
+										 ?>
 										</select>
 									</div>	
                                 </div>
@@ -78,7 +83,7 @@ include_once('header.php');
                                 
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Signup</button>
+                                <button type="submit" name="submit" class="button button-contactForm boxed-btn">Signup</button>
 								<br>
 								<br>
 								<a href="login" class="ms-5 text-primary">If you already Regisrtered then Login Here</a>

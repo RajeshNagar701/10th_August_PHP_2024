@@ -36,6 +36,23 @@ class control extends model{  // extend mnodel class so yu can access function
 			break;
 			
 			case '/contact':	
+				if(isset($_REQUEST['submit']))
+				{
+					$name=$_REQUEST['name'];
+					$email=$_REQUEST['email'];
+					$comment=$_REQUEST['comment'];
+					
+					$data=array("name"=>$name,"email"=>$email,"comment"=>$comment);
+					
+					$res=$this->insert('contacts',$data);
+					if($res)
+					{
+						echo "<script>
+							alert('Contact successful !');
+						</script>";
+					}
+					
+				}
 				include_once('contact.php');
 			break;
 			
@@ -44,6 +61,36 @@ class control extends model{  // extend mnodel class so yu can access function
 			break;
 			
 			case '/signup':	
+				$country=$this->select('country');
+				if(isset($_REQUEST['submit']))
+				{
+					$name=$_REQUEST['name'];
+					$email=$_REQUEST['email'];
+					$password=md5($_REQUEST['password']);
+					$gender=$_REQUEST['gender'];
+					$lag_arr=$_REQUEST['lag'];
+					$lag=implode(",",$lag_arr);
+					
+					$cid=$_REQUEST['cid'];
+	
+					// image upload
+					$file=$_FILES['file']['name'];
+					$path="assets/img/customer/".$file;
+					$tmp_img=$_FILES['file']['tmp_name'];
+					move_uploaded_file($tmp_img,$path);
+					
+					$data=array("name"=>$name,"email"=>$email,"password"=>$password,
+					"gender"=>$gender,"lag"=>$lag,"cid"=>$cid,"file"=>$file);
+					
+					$res=$this->insert('customer',$data);
+					if($res)
+					{
+						echo "<script>
+							alert('Signup successful !');
+						</script>";
+					}
+					
+				}
 				include_once('signup.php');
 			break;
 			

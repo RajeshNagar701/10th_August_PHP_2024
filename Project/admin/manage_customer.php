@@ -22,25 +22,37 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>#id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Gender</th>
+											<th>Lag</th>
+											<th>country</th>
+											<th>Image</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+									<?php
+									foreach($customer_arr as $d)
+									{
+									?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <td><?php echo $d->id;?></td>
+                                            <td><?php echo $d->name;?></td>
+                                            <td><?php echo $d->email;?></td>
+                                            <td><?php echo $d->gender;?></td>
+											<td><?php echo $d->lag;?></td>
+											<td><?php echo $d->cid;?></td>
+											<td><img width="50px" src="../website/assets/img/customer/<?php echo $d->file;?>" /></td>
 											<td>
 												<a href="" class="btn btn-primary">Edit</a>
 												<a href="" class="btn btn-danger">Delete</a>
 											</td>
                                         </tr>
-                                       
+									<?php
+									}
+									?>	
                                     </tbody>
                                 </table>
                             </div>

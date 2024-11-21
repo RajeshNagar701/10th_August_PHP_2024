@@ -18,7 +18,20 @@ class model{
 			$arr[]=$fetch;
 		}
 		return $arr;
+	}	
+	
+	function insert($tbl,$arr){
 		
+		//$data=array("name"=>$name,"email"=>$email,"comment"=>$comment);
+		$col_arr=array_keys($arr); // array("0"=>"name","1"=>"email","2"=>"comment")
+		$col=implode(",",$col_arr); // name,email,comment
+		
+		$value_arr=array_values($arr); // array("0"=>"raj","1"=>"raj@gmail.com","2"=>"hello")
+		$value=implode("','",$value_arr); // 'raj','raj@gmail.com','hello'
+		
+		$ins="insert into $tbl ($col) values ('$value')";   // query
+		$run=$this->conn->query($ins);  // run 
+		return $run;
 	}	
 }
 
