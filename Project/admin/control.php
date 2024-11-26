@@ -75,6 +75,53 @@ class control extends model{  // extend mnodel class so yu can access function
 				include_once('manage_employee.php');
 			break;
 			
+			case '/delete':
+				
+				if(isset($_REQUEST['del_contacts']))
+				{
+					$id=$_REQUEST['del_contacts'];
+					$where=array("id"=>$id);
+					$res=$this->delete_where('contacts',$where);
+					if($res)
+					{
+						echo "<script>
+							alert('Contact Deleted successful !');
+							window.location='manage_contact';
+						</script>";
+					}
+				}
+				
+				if(isset($_REQUEST['del_customer']))
+				{
+					$id=$_REQUEST['del_customer'];
+					$where=array("id"=>$id);
+					$res=$this->delete_where('customer',$where);
+					if($res)
+					{
+						echo "<script>
+							alert('Customer Deleted successful !');
+							window.location='manage_contact';
+						</script>";
+					}
+					
+				}
+				
+				if(isset($_REQUEST['del_categories']))
+				{
+					$id=$_REQUEST['del_categories'];
+					$where=array("id"=>$id);
+					$res=$this->delete_where('categories',$where);
+					if($res)
+					{
+						echo "<script>
+							alert('Categories Deleted successful !');
+							window.location='manage_categories';
+						</script>";
+					}
+				}
+				
+			break;
+			
 			
 			default:
 				echo "<h1> 404 : Page Not Found</h1>";

@@ -68,8 +68,8 @@ class control extends model{  // extend mnodel class so yu can access function
 					$email=$_REQUEST['email'];
 					$password=md5($_REQUEST['password']);
 					$gender=$_REQUEST['gender'];
-					$lag_arr=$_REQUEST['lag'];
-					$lag=implode(",",$lag_arr);
+					$lag_arr=$_REQUEST['lag']; 
+					$lag=implode(",",$lag_arr); // arr to string
 					
 					$cid=$_REQUEST['cid'];
 	

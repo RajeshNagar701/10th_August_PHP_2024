@@ -69,17 +69,17 @@ include_once('header.php');
                             <div class="row">
 								<div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text"placeholder="Enter your name">
+                                        <input class="form-control valid" name="name" id="name" type="text"placeholder="Enter your name" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email"placeholder="Email">
+                                        <input class="form-control valid" name="email" id="email" type="email"placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="comment" id="message" cols="30" rows="9"placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="comment" id="message" cols="30" required rows="9"placeholder=" Enter Message"></textarea>
                                     </div>
                                 </div>
                                 

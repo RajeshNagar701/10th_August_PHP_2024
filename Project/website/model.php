@@ -33,6 +33,24 @@ class model{
 		$run=$this->conn->query($ins);  // run 
 		return $run;
 	}	
+	
+	function delete_where($tbl,$arr)
+	{
+		$column_arr=array_keys($arr);
+		$values_arr=array_values($arr);
+		
+		$del="delete from $tbl where 1=1";  // 1=1 means query contnue
+		$i=0;
+		foreach($arr as $w)
+		{
+			echo $del.=" and $column_arr[$i]='$values_arr[$i]'";
+			$i++;
+		}
+		$run=$this->conn->query($del);  // query run on db
+		return $run;
+	}
+	
+	
 }
 
 $obj=new model;
