@@ -95,14 +95,31 @@ class control extends model{  // extend mnodel class so yu can access function
 				{
 					$id=$_REQUEST['del_customer'];
 					$where=array("id"=>$id);
-					$res=$this->delete_where('customer',$where);
-					if($res)
+					
+					// img delete
+					$res_select=$this->select_where('customer',$where);
+					$fetch=$res_select->fetch_object();
+					$del_img=$fetch->file;
+					
+					$status=$fetch->status;
+					
+					if($status=="Block")
 					{
+						$res_delete=$this->delete_where('customer',$where);
+						unlink('../website/assets/img/customer/'.$del_img);
 						echo "<script>
 							alert('Customer Deleted successful !');
-							window.location='manage_contact';
+							window.location='manage_customer';
 						</script>";
 					}
+					else
+					{
+						echo "<script>
+							alert('Customer NOT deleted So Blocked first!');
+							window.location='manage_customer';
+						</script>";
+					}
+					
 					
 				}
 				

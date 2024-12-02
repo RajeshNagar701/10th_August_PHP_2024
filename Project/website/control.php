@@ -57,6 +57,44 @@ class control extends model{  // extend mnodel class so yu can access function
 			break;
 			
 			case '/login':	
+				if(isset($_REQUEST['login']))
+				{
+					
+					$email=$_REQUEST['email'];
+					$password=md5($_REQUEST['password']);
+
+					$where=array("email"=>$email,"password"=>$password);
+					
+					$res=$this->select_where('customer',$where);
+					
+					
+					$chk=$res->num_rows;
+					if($chk===1) // 1 meanse true
+					{
+						$fetch=$res->fetch_object();
+						$status=$fetch->status;
+						if($status=="Unblock")
+						{
+						echo "<script>
+							alert('Login successful !');
+							window.location='index'
+						</script>";
+						}
+						else
+						{
+							echo "<script>
+							alert('Login Failed due to Blocked Account !');
+							</script>";
+						}
+					}
+					else
+					{
+						echo "<script>
+							alert('Login Failed due to Wrong Creadential !');
+						</script>";
+					}
+					
+				}
 				include_once('login.php');
 			break;
 			

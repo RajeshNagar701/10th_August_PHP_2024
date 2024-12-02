@@ -26,24 +26,24 @@ include_once('header.php');
                         <h2 class="contact-title">Login Here</h2>
                     </div>
                     <div class="col-lg-12">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" action="" method="post" >
                             <div class="row">
                                
                                
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input class="form-control valid" name="email" id="email" type="email"  placeholder="Email" required>
                                     </div>
                                 </div>
 								 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="password" id="password" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your password'" placeholder="Enter your password">
+                                        <input class="form-control valid" name="password" id="password" type="text"  required placeholder="Enter your password">
                                     </div>
                                 </div>
                                 
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Login</button>
+                                <button type="submit" name="login" class="button button-contactForm boxed-btn">Login</button>
 								<br>
 								<br>
 								<a href="signup" class="ms-5 text-primary">If Not Regisrtered then Signup Here</a>
