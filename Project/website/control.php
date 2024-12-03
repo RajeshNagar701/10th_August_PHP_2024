@@ -8,6 +8,8 @@ class control extends model{  // extend mnodel class so yu can access function
 	
 	function __construct(){
 		
+		session_start();
+		
 		model::__construct();  // call model __construct for db connectivity
 		
 		$path=$_SERVER['PATH_INFO'];
@@ -67,12 +69,19 @@ class control extends model{  // extend mnodel class so yu can access function
 					
 					$res=$this->select_where('customer',$where);
 					
-					
-					$chk=$res->num_rows;
+					$chk=$res->num_rows; // check cond by rows
 					if($chk===1) // 1 meanse true
 					{
+						
 						$fetch=$res->fetch_object();
 						$status=$fetch->status;
+						
+						//session create_function
+						
+						$_SESSION['userid']=$fetch->id;
+						$_SESSION['username']=$fetch->name;
+						
+						
 						if($status=="Unblock")
 						{
 						echo "<script>
@@ -96,6 +105,15 @@ class control extends model{  // extend mnodel class so yu can access function
 					
 				}
 				include_once('login.php');
+			break;
+			
+			case '/userlogout':
+				unset($_SESSION['userid']);
+				unset($_SESSION['username']);
+				echo "<script>
+						alert('Logout successful !');
+						window.location='index'
+					</script>";
 			break;
 			
 			case '/signup':	

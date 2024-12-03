@@ -8,6 +8,8 @@ class control extends model{  // extend mnodel class so yu can access function
 	
 	function __construct(){
 		
+		session_start();
+		
 		model::__construct();  // call model __construct for db connectivity
 		
 		$path=$_SERVER['PATH_INFO'];
@@ -15,8 +17,52 @@ class control extends model{  // extend mnodel class so yu can access function
 		switch($path)
 		{
 			case '/admin-login':
+				if(isset($_REQUEST['login']))
+				{
+					
+					$email=$_REQUEST['email'];
+					$password=md5($_REQUEST['password']);
+
+					$where=array("email"=>$email,"password"=>$password);
+					
+					$res=$this->select_where('admins',$where);
+					
+					$chk=$res->num_rows; // check cond by rows
+					if($chk===1) // 1 meanse true
+					{
+						$fetch=$res->fetch_object();
+						//session create_function
+						
+						$_SESSION['adminid']=$fetch->id;
+						$_SESSION['adminname']=$fetch->name;
+						
+						echo "<script>
+							alert('Login successful !');
+							window.location='dashboard'
+						</script>";
+						
+					}
+					else
+					{
+						echo "<script>
+							alert('Login Failed due to Wrong Creadential !');
+							window.location='admin-login'
+						</script>";
+					}
+					
+				}
 				include_once('index.php');
 			break;
+			
+			case '/adminlogout':
+				unset($_SESSION['adminid']);
+				unset($_SESSION['adminname']);
+				echo "<script>
+						alert('Logout successful !');
+						window.location='admin-login'
+					</script>";
+			break;
+			
 			
 			case '/dashboard':
 				include_once('dashboard.php');

@@ -12,7 +12,7 @@ Default time :  24 minutes (1440 seconds),
 */
 
 session_start();
-//$_SESSION['user']="Raj Nagar";  // CREATE
+$_SESSION['user']="Raj Nagar";  // CREATE
 
 
 //echo $_SESSION['user'];       // USE

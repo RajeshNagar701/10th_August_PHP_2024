@@ -1,3 +1,19 @@
+
+<?php
+if(isset($_SESSION['adminid']))
+{
+	
+}
+else
+{
+	echo "<script>
+			alert('Login First !');
+			window.location='admin-login'
+		</script>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -33,7 +49,7 @@
 
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
-                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+                <a href="adminlogout" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
 
             </div>
         </nav>
@@ -46,7 +62,7 @@
                             <img src="assets/img/user.png" class="img-thumbnail" />
 
                             <div class="inner-text">
-                                Jhon Deo Alex
+                                Hi <?php echo $_SESSION['adminname']?>
                             <br />
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>

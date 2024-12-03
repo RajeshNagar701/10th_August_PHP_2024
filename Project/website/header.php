@@ -77,14 +77,41 @@ function active($currect_page){
                                         </ul>
                                     </li>
                                     <li class="<?php echo active('contact')?>"><a href="contact">Contact</a></li>
-                                </ul>
+									<?php
+									if(isset($_SESSION['userid']))
+									{
+									?>
+										<li class=""><a href="#">Hi .. <?php echo $_SESSION['username']?></a>
+											<ul class="submenu">
+												<li class="<?php echo active('userprofile')?>"><a href="userprofile">My Account</a></li>
+											</ul>
+										</li>
+									<?php	
+									}
+									?>
+									
+								</ul>
                             </nav>
                         </div>
                     </div>
                 </div> 
                 <div class="header-right d-none d-lg-block">
                     <a href="#" class="header-btn1"><img src="assets/img/icon/call.png" alt=""> (91) 972 204-1171</a>
-                    <a href="login" class="header-btn2">Login</a>
+                    <?php
+					if(isset($_SESSION['userid']))
+					{
+					?>
+						<a href="userlogout" class="header-btn2">Logout</a>
+					<?php	
+					}
+					else
+					{
+					?>
+						<a href="login" class="header-btn2">Login</a>
+					<?php
+					}	
+					?>
+					
                 </div>
                 <!-- Mobile Menu -->
                 <div class="col-12">
