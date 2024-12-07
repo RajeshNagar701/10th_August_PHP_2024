@@ -107,6 +107,26 @@ class control extends model{  // extend mnodel class so yu can access function
 				include_once('login.php');
 			break;
 			
+			case '/userprofile':
+				$where=array("id"=>$_SESSION['userid']);
+				$res=$this->select_where('customer',$where);
+				$fetch=$res->fetch_object();
+				include_once('userprofile.php');
+			break;
+			
+			case '/editprofile':
+				$country=$this->select('country');
+				if(isset($_REQUEST['user_edit']))
+				{
+					$id=$_REQUEST['user_edit'];
+					$where=array("id"=>$id);
+					$res=$this->select_where('customer',$where);
+					$fetch=$res->fetch_object();
+				}
+				include_once('editprofile.php');
+			break;
+			
+			
 			case '/userlogout':
 				unset($_SESSION['userid']);
 				unset($_SESSION['username']);

@@ -48,7 +48,7 @@ include_once('header.php');
 											<td><?php echo $d->status;?></td>
 											<td><img width="50px" src="../website/assets/img/customer/<?php echo $d->file;?>" /></td>
 											<td>
-												<a href="" class="btn btn-primary">Edit</a>
+												<a href="edituser?edit_user=<?php echo $d->id;?>" class="btn btn-primary">Edit</a>
 												<a href="delete?del_customer=<?php echo $d->id?>" class="btn btn-danger">Delete</a>
 											</td>
                                         </tr>
