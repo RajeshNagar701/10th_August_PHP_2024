@@ -92,7 +92,7 @@ class control extends model{  // extend mnodel class so yu can access function
 			break;
 			
 			case '/manage_customer':
-				$customer_arr=$this->select('customer');
+				$customer_arr=$this->select_join('country','customer','customer.cid=country.id');
 				include_once('manage_customer.php');
 			break;
 			

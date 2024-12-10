@@ -9,6 +9,18 @@ class model{
 							// hostname  // username // pass //db name	
 		$this->conn=new Mysqli('localhost','root','','aug10');
 	}
+	
+	function select_join($tbl1,$tbl2,$on){
+		
+		$sel="select * from $tbl1 join $tbl2 on $on";   // query
+		$run=$this->conn->query($sel);  // run 
+		while($fetch=$run->fetch_object()){
+			
+			$arr[]=$fetch;
+		}
+		return $arr;
+	}	
+	
 	function select($tbl){
 		
 		$sel="select * from $tbl";   // query
@@ -19,6 +31,7 @@ class model{
 		}
 		return $arr;
 	}	
+	
 	
 	function insert($tbl,$arr){
 		

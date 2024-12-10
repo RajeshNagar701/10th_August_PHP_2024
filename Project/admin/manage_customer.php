@@ -44,7 +44,7 @@ include_once('header.php');
                                             <td><?php echo $d->email;?></td>
                                             <td><?php echo $d->gender;?></td>
 											<td><?php echo $d->lag;?></td>
-											<td><?php echo $d->cid;?></td>
+											<td><?php echo $d->cnm;?></td>
 											<td><?php echo $d->status;?></td>
 											<td><img width="50px" src="../website/assets/img/customer/<?php echo $d->file;?>" /></td>
 											<td>
