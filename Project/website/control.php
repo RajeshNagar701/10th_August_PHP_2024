@@ -122,6 +122,56 @@ class control extends model{  // extend mnodel class so yu can access function
 					$where=array("id"=>$id);
 					$res=$this->select_where('customer',$where);
 					$fetch=$res->fetch_object();
+					
+					$old_img=$fetch->file;
+					
+					if(isset($_REQUEST['save']))
+					{
+						$name=$_REQUEST['name'];
+						$email=$_REQUEST['email'];
+						$gender=$_REQUEST['gender'];
+						$lag_arr=$_REQUEST['lag']; 
+						$lag=implode(",",$lag_arr); // arr to string
+						
+						$cid=$_REQUEST['cid'];
+						
+						if($_FILES['file']['size']>0)
+						{
+							// image upload
+							$file=$_FILES['file']['name'];
+							$path="assets/img/customer/".$file;
+							$tmp_img=$_FILES['file']['tmp_name'];
+							move_uploaded_file($tmp_img,$path);
+						
+							$arr=array("name"=>$name,"email"=>$email,"gender"=>$gender,
+							"lag"=>$lag,"cid"=>$cid,"file"=>$file);
+							
+							$res=$this->update_where('customer',$arr,$where);
+							if($res)
+							{
+								$_SESSION['username']=$name;
+								unlink("assets/img/customer/".$old_img);
+								echo "<script>
+									alert('Update successful !');
+									window.location='userprofile'
+								  </script>";
+							}
+						}
+						else
+						{
+							$arr=array("name"=>$name,"email"=>$email,"gender"=>$gender,
+							"lag"=>$lag,"cid"=>$cid);
+							$res=$this->update_where('customer',$arr,$where);
+							if($res)
+							{
+								$_SESSION['username']=$name;
+								echo "<script>
+									alert('Update successful !');
+									window.location='userprofile'
+								  </script>";
+							}
+						}
+					}
 				}
 				include_once('editprofile.php');
 			break;

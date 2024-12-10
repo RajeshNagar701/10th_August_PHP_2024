@@ -105,7 +105,7 @@ include_once('header.php');
                                 
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" name="submit" class="button button-contactForm boxed-btn">Save</button>
+                                <button type="submit" name="save" class="button button-contactForm boxed-btn">Save</button>
 								<br>
 								<br>
 								<a href="userprofile" class="ms-5 text-primary">Back</a>
