@@ -8,15 +8,17 @@
 <script>
 
 function plus(){
-	var number=document.getElementById('number').innerHTML;
-	number++;
-	document.getElementById('number').innerHTML=number;		
+	var num=document.getElementById('number').innerText;
+	num++;
+	document.getElementById('number').innerText=num;
 }
 
 function minus(){
-	var number=document.getElementById('number').innerHTML;
-	number--;
-	document.getElementById('number').innerHTML=number;		
+	var num=document.getElementById('number').innerText;
+	if(num>0)
+	{
+	num--;
+	document.getElementById('number').innerText=num;
+	}
 }
-
 </script>
