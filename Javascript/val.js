@@ -177,20 +177,21 @@ function reg_form(str)
 		}
 	} 
 	
-	
 	function check1(file)
 	{
 	
 	var filename=file.value;
 	var ext=filename.substring(filename.lastIndexOf('.')+1);
-		if(ext=="PDF" || ext=="pdf")
+		if(ext=="pdf" || ext=="PDF")
 		{
-		document.getElementById("msg1").innerHTML="";
-		document.getElementById("submit").disabled=false;
+			document.getElementById("msg1").innerHTML="";
+			document.getElementById("submit").disabled=false;
 		}
 		else
 		{
-		document.getElementById("msg1").innerHTML="! Please upload only PDF File";
-		document.getElementById("submit").disabled=true;
+			document.getElementById("msg1").innerHTML="! Please upload only PDF File";
+			document.getElementById("submit").disabled=true;
 		}
 	} 
+	
+	
