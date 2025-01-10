@@ -58,7 +58,7 @@ There are integrated functions to manipulate JSON. Most important of them are PH
 		{
 			$arr[]=$fetch;                                      
 		}
-		
+	print_r($arr);	
 	echo $json_data=json_encode($arr);  // con
 
 	
