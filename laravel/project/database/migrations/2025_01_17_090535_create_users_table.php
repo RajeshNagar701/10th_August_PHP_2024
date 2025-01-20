@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('username');
+            $table->string('email');
             $table->string('password');
-            $table->bigInteger('mobile');
+            $table->string('gender');
+            $table->string('lag');
+            $table->string('img');
             $table->enum('status',['Block','Unblock'])->default('Unblock');
             $table->timestamps();
         });

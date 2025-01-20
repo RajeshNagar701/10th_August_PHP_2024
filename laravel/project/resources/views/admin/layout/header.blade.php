@@ -100,6 +100,7 @@ function active($currect_page){
                         <a href="manage_blogs" class="nav-item nav-link <?php active('manage_blogs')?>">Blog</a>
                         <a href="manage_services" class="nav-item nav-link <?php active('manage_services')?>">Service</a>
                         <a href="manage_contacts" class="nav-item nav-link <?php active('manage_contacts')?>">Contact</a>
+                        <a href="manage_users" class="nav-item nav-link <?php active('manage_users')?>">User</a>
                     </div>
                 </div>
             </nav>

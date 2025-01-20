@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+// load all controllers
+use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('website.index');
 });
+
+Route::get('/signup',[UserController::class,'create']);
+Route::get('/login',[UserController::class,'login']);
 
 Route::get('/about', function () {
     return view('website.about');
@@ -34,6 +41,7 @@ Route::get('/service', function () {
 });
 
 Route::get('/product', function () {
+
     return view('website.product');
 });
 
@@ -89,3 +97,5 @@ Route::get('manage_services', function () {
 Route::get('manage_contacts', function () {
     return view('admin.manage_contacts');
 });
+
+Route::get('manage_users',[UserController::class,'show']);
