@@ -38,15 +38,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($data as $d)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Mava Mithai</td>
-                                    <td>mithai.jpg</td>
+                                    <td>{{$d->id}}</td>
+                                    <td>{{$d->cate_name}}</td>
+                                    <td>{{$d->cate_img}}</td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="delete_categories" class="btn btn-primary">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

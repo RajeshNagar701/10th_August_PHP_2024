@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\order;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('website.categories');
+        
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.add_categories');
+        return view('admin.add_orders');
     }
 
     /**
@@ -41,22 +41,22 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show(order $order)
     {
-        $data=category::all();
-        return view('admin.manage_categories',['data'=>$data]);
+        $data=order::all();
+        return view('admin.manage_orders',['data'=>$data]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(order $order)
     {
         //
     }
@@ -65,10 +65,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, order $order)
     {
         //
     }
@@ -76,10 +76,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(order $order)
     {
         //
     }

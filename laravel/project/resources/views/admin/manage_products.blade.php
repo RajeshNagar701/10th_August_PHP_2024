@@ -32,21 +32,29 @@
                             <thead>
                                 <tr>
                                     <th>Id#</th>
-                                    <th>Product Name</th>
+                                    <th>Categories ID</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($data as $d)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Mava Mithai</td>
-                                    <td>mithai.jpg</td>
+                                    <td>{{$d->id}}</td>
+                                    <td>{{$d->cate_id}}</td>
+                                    <td>{{$d->prod_name}}</td>
+                                    <td>{{$d->prod_price}}</td>
+                                    <td>{{$d->description}}</td>
+                                    <td>{{$d->prod_img}}</td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="delete_categories" class="btn btn-primary">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

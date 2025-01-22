@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('website.categories');
+        return view('website.product_details');
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.add_categories');
+        return view('admin.add_products');
     }
 
     /**
@@ -41,22 +41,22 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show(product $product)
     {
-        $data=category::all();
-        return view('admin.manage_categories',['data'=>$data]);
+        $data=product::all();
+        return view('admin.manage_products',['data'=>$data]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(product $product)
     {
         //
     }
@@ -65,10 +65,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, product $product)
     {
         //
     }
@@ -76,10 +76,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(product $product)
     {
         //
     }

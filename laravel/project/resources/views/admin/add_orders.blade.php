@@ -4,11 +4,11 @@
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
         <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Add Blog</h1>
+            <h1 class="text-white display-3 mt-lg-5">Add Orders</h1>
             <div class="d-inline-flex align-items-center text-white">
                 <p class="m-0"><a class="text-white" href="">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
-                <p class="m-0">Add Blog</p>
+                <p class="m-0">Add Orders</p>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <h1 class="section-title position-relative text-center mb-5">Add Blog</h1>
+                    <h1 class="section-title position-relative text-center mb-5">Add Orders</h1>
                 </div>
             </div>
             <div class="row justify-content-center">

@@ -97,8 +97,7 @@ function active($currect_page){
                         <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="manage_blogs" class="nav-item nav-link <?php active('manage_blogs')?>">Blog</a>
-                        <a href="manage_services" class="nav-item nav-link <?php active('manage_services')?>">Service</a>
+                        <a href="manage_orders" class="nav-item nav-link <?php active('manage_orders')?>">Orders</a>
                         <a href="manage_contacts" class="nav-item nav-link <?php active('manage_contacts')?>">Contact</a>
                         <a href="manage_users" class="nav-item nav-link <?php active('manage_users')?>">User</a>
                     </div>

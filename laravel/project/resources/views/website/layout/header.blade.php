@@ -79,7 +79,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
-                        <a href="product" class="nav-item nav-link">Product</a>
+                        <a href="categories" class="nav-item nav-link">Product</a>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
                         <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>

@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 // load all controllers
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +31,8 @@ Route::get('/about', function () {
     return view('website.about');
 });
 
-Route::get('/contact', function () {
-    return view('website.contact');
-});
+Route::get('/contact',[ContactController::class,'create']);
+
 
 Route::get('/gallery', function () {
     return view('website.gallery');
@@ -40,10 +42,9 @@ Route::get('/service', function () {
     return view('website.service');
 });
 
-Route::get('/product', function () {
+Route::get('/categories',[CategoryController::class,'index']);
 
-    return view('website.product');
-});
+Route::get('/product_details',[ProductController::class,'index']);
 
 Route::get('*', function () {
     return view('website.pnf');
@@ -61,41 +62,17 @@ Route::get('dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('add_categories', function () {
-    return view('admin.add_categories');
-});
+Route::get('/add_categories',[CategoryController::class,'create']);
+Route::get('/manage_categories',[CategoryController::class,'show']);
 
-Route::get('manage_categories', function () {
-    return view('admin.manage_categories');
-});
-
-Route::get('add_products', function () {
-    return view('admin.add_products');
-});
-
-Route::get('manage_products', function () {
-    return view('admin.manage_products');
-});
-
-Route::get('add_blogs', function () {
-    return view('admin.add_blogs');
-});
-
-Route::get('manage_blogs', function () {
-    return view('admin.manage_blogs');
-});
-
-Route::get('add_services', function () {
-    return view('admin.add_services');
-});
-
-Route::get('manage_services', function () {
-    return view('admin.manage_services');
-});
+Route::get('/add_orders',[OrderController::class,'create']);
+Route::get('/manage_orders',[OrderController::class,'show']);
 
 
-Route::get('manage_contacts', function () {
-    return view('admin.manage_contacts');
-});
+Route::get('/add_products',[ProductController::class,'create']);
+Route::get('/manage_products',[ProductController::class,'show']);
 
+
+
+Route::get('/manage_contacts',[ContactController::class,'show']);
 Route::get('manage_users',[UserController::class,'show']);
