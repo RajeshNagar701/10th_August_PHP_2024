@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -24,7 +26,6 @@ class UserController extends Controller
      */
     public function create()
     {
-
         return view('website.signup');
     }
 
@@ -36,7 +37,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data= new user;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->lag=implode(",",$request->lag);
+        $data->gender=$request->gender;
+        
+        // img upload
+        $file=$request->file('img');		
+        $filename=time().'_img.'.$request->file('img')->getClientOriginalExtension();
+        $file->move('website/upload/users/',$filename);  // use move for move image in public/images
+        $data->img=$filename;
+
+        $data->save();
+        return redirect('/signup');
     }
 
     /**

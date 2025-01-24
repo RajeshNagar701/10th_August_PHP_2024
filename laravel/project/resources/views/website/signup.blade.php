@@ -26,21 +26,22 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
+                       
+                        <form method="post" action="{{ url('/insert_signup') }}" enctype="multipart/form-data" >
+                            @csrf
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="text" name="name" class="form-control p-4" id="email" placeholder="Your Name" required="required" />
+                                    <input type="text" name="name" class="form-control p-4" id="email" placeholder="Your Name"  />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" />
+                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email"  />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="password" name="password" class="form-control p-4" id="name" placeholder="Your password" required="required"/>
+                                    <input type="password" name="password" class="form-control p-4" id="name" placeholder="Your password"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -52,14 +53,14 @@
                             </div>
                             <div class="control-group">
                                 Lag :<br> 
-                                Hindi :<input type="checkbox" name="lag" value="Hindi" class="p-4" />
-                                English<input type="checkbox" name="lag" value="English" class="p-4" />
-                                Gujarati<input type="checkbox" name="lag" value="Gujarati" class="p-4" />
+                                Hindi :<input type="checkbox" name="lag[]" value="Hindi" class="p-4" />
+                                English<input type="checkbox" name="lag[]" value="English" class="p-4" />
+                                Gujarati<input type="checkbox" name="lag[]" value="Gujarati" class="p-4" />
                                 <br> <br> 
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="file" name="img" class="form-control p-4" id="email" placeholder="Your Image" required="required" />
+                                    <input type="file" name="img" class="form-control p-4" id="email" placeholder="Your Image" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

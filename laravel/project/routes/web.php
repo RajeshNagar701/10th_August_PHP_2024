@@ -25,6 +25,8 @@ Route::get('/', function () {
 });
 
 Route::get('/signup',[UserController::class,'create']);
+Route::post('/insert_signup',[UserController::class,'store']);
+
 Route::get('/login',[UserController::class,'login']);
 
 Route::get('/about', function () {
@@ -32,7 +34,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/contact',[ContactController::class,'create']);
-
+Route::post('/insert_contact',[ContactController::class,'store']);
 
 Route::get('/gallery', function () {
     return view('website.gallery');
