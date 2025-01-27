@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -24,7 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.add_products');
+        $data=category::all();
+        return view('admin.add_products',['data'=>$data]);
     }
 
     /**
@@ -35,7 +37,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cate_id'=> 'required',
+            'prod_price'=> 'required',
+            'qty'=> 'required',
+            'description'=> 'required',
+            'prod_name' => 'required|unique:products|alpha:ascii|max:255',
+            'prod_img' => 'required|image',
+        ]);
+        $data=new product;
+        $data->cate_id=$request->cate_id;
+        $data->prod_name=$request->prod_name;
+        $data->prod_price=$request->prod_price	;
+        $data->qty=$request->qty;
+        $data->description=$request->description;
+    
+        // img upload
+        $file=$request->file('prod_img');		
+        $filename=time().'_img.'.$request->file('prod_img')->getClientOriginalExtension();
+        $file->move('admin/upload/product/',$filename);  // use move for move image in public/images
+        $data->prod_img=$filename;
+
+        $data->save();
+        return redirect('/add_products');
     }
 
     /**

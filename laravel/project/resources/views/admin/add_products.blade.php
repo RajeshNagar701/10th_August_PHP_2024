@@ -26,15 +26,46 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" method="post" id="contactForm" novalidate="novalidate">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form method="post" action="{{url('/insert_product')}}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Categories Name" required="required" data-validation-required-message="Please Enter Categories Name" />
+                                    <select class="form-control" name="cate_id">
+                                        <option value="" style="color:black">Select Categories</option>
+                                        @foreach($data as $d)
+                                        <option value="{{$d->id}}">{{$d->cate_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+
+                                <div class="col-sm-12 control-group">
+                                    <input type="text" class="form-control p-4" value="{{old('prod_name')}}" name="prod_name" placeholder="Product Name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-12 control-group">
-                                    <input type="file" class="form-control p-4" id="name" placeholder="Categories Image" required="required" data-validation-required-message="Please Upload Categories Image" />
+                                    <input type="file" class="form-control p-4" name="prod_img" placeholder="Product Image"  />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-12 control-group">
+                                    <input type="number" class="form-control p-4" value="{{old('prod_price')}}" name="prod_price" placeholder="Product Price"  />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-12 control-group">
+                                    <input type="number" class="form-control p-4" value="{{old('qty')}}" name="qty" placeholder="Product Quantity"/>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-12 control-group">
+                                    <textarea class="form-control p-4" name="description" value="{{old('description')}}" placeholder="Product Description" ></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

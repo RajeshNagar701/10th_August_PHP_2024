@@ -46,6 +46,7 @@ Route::get('/service', function () {
 
 Route::get('/categories',[CategoryController::class,'index']);
 
+
 Route::get('/product_details',[ProductController::class,'index']);
 
 Route::get('*', function () {
@@ -65,6 +66,8 @@ Route::get('dashboard', function () {
 });
 
 Route::get('/add_categories',[CategoryController::class,'create']);
+Route::post('/insert_categories',[CategoryController::class,'store']);
+
 Route::get('/manage_categories',[CategoryController::class,'show']);
 
 Route::get('/add_orders',[OrderController::class,'create']);
@@ -72,6 +75,7 @@ Route::get('/manage_orders',[OrderController::class,'show']);
 
 
 Route::get('/add_products',[ProductController::class,'create']);
+Route::post('/insert_product',[ProductController::class,'store']);
 Route::get('/manage_products',[ProductController::class,'show']);
 
 

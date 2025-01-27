@@ -26,16 +26,21 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" method="post" id="contactForm" novalidate="novalidate">
+                        
+                        <form method="post" action="{{url('/insert_categories')}}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-row">
-                                <div class="col-sm-12 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Categories Name" required="required" data-validation-required-message="Please Enter Categories Name" />
-                                    <p class="help-block text-danger"></p>
+                                <div class="col-sm-12 control-group p-3">
+                                    <input type="text" class="form-control p-4" value="{{old('cate_name')}}" name="cate_name" placeholder="Categories Name" />
+                                    @error('cate_name')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
-                                <div class="col-sm-12 control-group">
-                                    <input type="file" class="form-control p-4" id="name" placeholder="Categories Image" required="required" data-validation-required-message="Please Upload Categories Image" />
-                                    <p class="help-block text-danger"></p>
+                                <div class="col-sm-12 control-group p-3">
+                                    <input type="file" class="form-control p-4" name="cate_img" placeholder="Categories Image" />
+                                    @error('cate_img')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             

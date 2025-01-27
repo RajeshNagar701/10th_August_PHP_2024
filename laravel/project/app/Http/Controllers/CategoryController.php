@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('website.categories');
+        $data=category::all();
+        return view('website.categories',['data'=>$data]);
     }
 
     /**
@@ -35,7 +36,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'cate_name' => 'required|unique:categories|alpha:ascii|max:255',
+            'cate_img' => 'required|image',
+        ]);
+
+        $data=new category;
+        $data->cate_name=$request->cate_name;
+        // img upload
+        $file=$request->file('cate_img');		
+        $filename=time().'_img.'.$request->file('cate_img')->getClientOriginalExtension();
+        $file->move('admin/upload/category/',$filename);  // use move for move image in public/images
+        $data->cate_img=$filename;
+
+        $data->save();
+        return redirect('/add_categories');
+
+
     }
 
     /**

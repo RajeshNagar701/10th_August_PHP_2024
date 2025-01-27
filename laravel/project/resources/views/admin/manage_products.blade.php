@@ -43,12 +43,12 @@
                             <tbody>
                                 @foreach($data as $d)
                                 <tr>
-                                    <td>{{$d->id}}</td>
+                                    <td><?php echo $d->id?></td>
                                     <td>{{$d->cate_id}}</td>
                                     <td>{{$d->prod_name}}</td>
                                     <td>{{$d->prod_price}}</td>
                                     <td>{{$d->description}}</td>
-                                    <td>{{$d->prod_img}}</td>
+                                    <td><img src="{{url('admin/upload/product/'.$d->prod_img)}}" width="50px" height="40px"></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="delete_categories" class="btn btn-primary">Delete</a>
