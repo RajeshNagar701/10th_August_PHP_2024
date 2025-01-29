@@ -95,8 +95,9 @@ class UserController extends Controller
      * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy(user $user,$id)
     {
-        //
+        $data=user::find($id)->delete();
+        return redirect('/manage_users');
     }
 }

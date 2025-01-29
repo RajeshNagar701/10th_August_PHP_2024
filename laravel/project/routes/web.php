@@ -67,18 +67,22 @@ Route::get('dashboard', function () {
 
 Route::get('/add_categories',[CategoryController::class,'create']);
 Route::post('/insert_categories',[CategoryController::class,'store']);
-
 Route::get('/manage_categories',[CategoryController::class,'show']);
+Route::get('/manage_categories/{id}',[CategoryController::class,'destroy']);
 
 Route::get('/add_orders',[OrderController::class,'create']);
 Route::get('/manage_orders',[OrderController::class,'show']);
-
+Route::get('/manage_orders/{id}',[OrderController::class,'destroy']);
 
 Route::get('/add_products',[ProductController::class,'create']);
 Route::post('/insert_product',[ProductController::class,'store']);
 Route::get('/manage_products',[ProductController::class,'show']);
+Route::get('/manage_products/{id}',[ProductController::class,'destroy']);
 
 
 
 Route::get('/manage_contacts',[ContactController::class,'show']);
+Route::get('/manage_contacts/{id}',[ContactController::class,'destroy']);
+
 Route::get('manage_users',[UserController::class,'show']);
+Route::get('/manage_users/{id}',[UserController::class,'destroy']);

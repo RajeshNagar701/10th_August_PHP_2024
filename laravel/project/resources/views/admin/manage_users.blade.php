@@ -53,7 +53,7 @@
                                     <td><?php echo $d->img;?></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
-                                        <a href="delete_categories" class="btn btn-primary">Delete</a>
+                                        <a href="{{url('manage_users/'.$d->id)}}" class="btn btn-primary">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

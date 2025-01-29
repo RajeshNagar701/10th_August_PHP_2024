@@ -44,14 +44,14 @@
                                 @foreach($data as $d)
                                 <tr>
                                     <td><?php echo $d->id?></td>
-                                    <td>{{$d->cate_id}}</td>
+                                    <td>{{$d->cate_name}} {{$d->cate_id}}</td>
                                     <td>{{$d->prod_name}}</td>
                                     <td>{{$d->prod_price}}</td>
                                     <td>{{$d->description}}</td>
                                     <td><img src="{{url('admin/upload/product/'.$d->prod_img)}}" width="50px" height="40px"></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
-                                        <a href="delete_categories" class="btn btn-primary">Delete</a>
+                                        <a href="{{url('manage_products/'.$d->id)}}" class="btn btn-primary">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

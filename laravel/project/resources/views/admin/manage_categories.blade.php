@@ -45,7 +45,7 @@
                                     <td><img src="{{url('admin/upload/category/'.$d->cate_img)}}" width="50px"></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
-                                        <a href="delete_categories" class="btn btn-primary">Delete</a>
+                                        <a href="{{url('manage_categories/'.$d->id)}}" class="btn btn-primary">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

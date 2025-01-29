@@ -79,8 +79,9 @@ class OrderController extends Controller
      * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(order $order)
+    public function destroy(order $order,$id)
     {
-        //
+        $data=order::find($id)->delete();
+        return redirect('/manage_orders');
     }
 }

@@ -70,7 +70,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        $data=product::all();
+        $data=product::join('categories','products.cate_id','=','categories.id')->get(['products.*','categories.cate_name']);
         return view('admin.manage_products',['data'=>$data]);
     }
 
@@ -103,8 +103,9 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(product $product,$id)
     {
-        //
+        $data=product::find($id)->delete();
+        return redirect('/manage_products');
     }
 }
