@@ -27,20 +27,35 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary py-3 d-none d-md-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="col-md-4 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white pr-3" href="">FAQs</a>
                         <span class="text-white">|</span>
                         <a class="text-white px-3" href="">Help</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="signup">Signup</a>
+                        @if(session()->has('uid'))
+                            <a class="tex   t-white pl-3" href="user_logout">Logout</a>
+                        @else
+                            <a class="text-white pl-3" href="signup">Signup</a>
+                        @endif
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-lg-right">
+                <div class="col-md-4 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        @if(session()->has('uid'))
+                            <a class="text-white pr-3" href="">Hi {{session()->get('uname')}}</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white px-3" href="user_profile">Profile</a>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white px-3" href="">
                             <i class="fab fa-facebook-f"></i>

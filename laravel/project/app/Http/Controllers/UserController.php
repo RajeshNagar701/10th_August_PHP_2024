@@ -6,6 +6,7 @@ use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -17,6 +18,51 @@ class UserController extends Controller
     public function login()
     {
         return view('website.login');
+    }
+
+    public function user_auth(Request $request)
+    {
+       $data=user::where('email',$request->email)->first();
+       if($data)
+       {
+            if(Hash::check($request->password,$data->password))
+            {
+                if($data->status=="Unblock")
+                {
+                    //session create
+                    session()->put('uname',$data->name);
+                    session()->put('uid',$data->id); 
+
+                    // get session()->get('uname');
+                    //delete session()->pull('uname');
+
+                    Alert::success('Login Success', "User Login Successful");
+                    return redirect('/');
+                }
+                else
+                {
+                    Alert::error('Login Failed', "Blocked Account");
+                    return redirect('/login');
+                }
+            }
+            else
+            {
+                Alert::error('Login Failed', "Password Doesn't Not Match");
+                return redirect('/login');
+            }
+       }
+       else
+       {
+            Alert::error('Login Failed', "Email Doesn't Exist");
+            return redirect('/login');
+       }
+    }
+
+    function user_logout(){
+        session()->pull('uname');
+        session()->pull('uid');
+        Alert::success('Logout Success', "User Logout Successful");
+        return redirect('/');
     }
 
     /**
@@ -51,6 +97,7 @@ class UserController extends Controller
         $data->img=$filename;
 
         $data->save();
+        Alert::success('Signup Success', "User Signup Successful");
         return redirect('/signup');
     }
 
@@ -98,6 +145,7 @@ class UserController extends Controller
     public function destroy(user $user,$id)
     {
         $data=user::find($id)->delete();
+        Alert::success('Delete Success', "User Delete Successful");
         return redirect('/manage_users');
     }
 }

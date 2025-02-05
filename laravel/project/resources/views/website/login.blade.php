@@ -27,17 +27,16 @@
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
                         <div id="success"></div>
-                        <form method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
-                           
+                        <form method="post" action="{{ url('/user_auth') }}" enctype="multipart/form-data" >
+                            @csrf
+                            
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" />
+                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email"  />
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            </div>    
-                            <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="password" name="password" class="form-control p-4" id="name" placeholder="Your password" required="required"/>
+                                    <input type="password" name="password" class="form-control p-4" id="name" placeholder="Your password"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

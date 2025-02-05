@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    
+@include('sweetalert::alert')   
 <?php
 function active($currect_page){
   $url_array =  explode('/', $_SERVER['REQUEST_URI']) ; // current page url

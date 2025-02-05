@@ -28,6 +28,8 @@ Route::get('/signup',[UserController::class,'create']);
 Route::post('/insert_signup',[UserController::class,'store']);
 
 Route::get('/login',[UserController::class,'login']);
+Route::post('/user_auth',[UserController::class,'user_auth']);
+Route::get('/user_logout',[UserController::class,'user_logout']);
 
 Route::get('/about', function () {
     return view('website.about');
