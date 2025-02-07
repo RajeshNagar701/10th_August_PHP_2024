@@ -32,7 +32,6 @@ class UserController extends Controller
                     //session create
                     session()->put('uname',$data->name);
                     session()->put('uid',$data->id); 
-
                     // get session()->get('uname');
                     //delete session()->pull('uname');
 
@@ -63,6 +62,11 @@ class UserController extends Controller
         session()->pull('uid');
         Alert::success('Logout Success', "User Logout Successful");
         return redirect('/');
+    }
+
+    function user_profile(){
+        $data=user::where('id',session()->get('uid'))->first();
+        return view('website.user_profile',['data'=>$data]);
     }
 
     /**
@@ -119,9 +123,10 @@ class UserController extends Controller
      * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit(user $user,$id)
     {
-        //
+        $data=user::find($id);
+        return view('website.edit_user',['data'=>$data]);
     }
 
     /**
@@ -131,9 +136,25 @@ class UserController extends Controller
      * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, user $user,$id)
     {
-        //
+        $data=user::find($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->lag=implode(",",$request->lag);
+        $data->gender=$request->gender;
+
+        if($request->hasFile('img')) 
+        {
+            unlink('website/upload/users/'.$data->img);
+            $file=$request->file('img');		
+            $filename=time().'_img.'.$request->file('img')->getClientOriginalExtension();
+            $file->move('website/upload/users/',$filename);  // use move for move image in public/images
+            $data->img=$filename;
+        }
+        $data->update();
+        Alert::success('Update Success', "User Update Successful");
+        return redirect('/user_profile');
     }
 
     /**

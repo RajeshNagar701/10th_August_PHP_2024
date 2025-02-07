@@ -31,6 +31,11 @@ Route::get('/login',[UserController::class,'login']);
 Route::post('/user_auth',[UserController::class,'user_auth']);
 Route::get('/user_logout',[UserController::class,'user_logout']);
 
+Route::get('/user_profile',[UserController::class,'user_profile']);
+Route::get('/user_profile/{id}',[UserController::class,'edit']);
+Route::post('/update_user/{id}',[UserController::class,'update']);
+
+
 Route::get('/about', function () {
     return view('website.about');
 });

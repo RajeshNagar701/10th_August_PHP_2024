@@ -50,7 +50,7 @@
                                     <td><?php echo $d->password;?></td>
                                     <td><?php echo $d->gender;?></td>
                                     <td><?php echo $d->lag;?></td>
-                                    <td><?php echo $d->img;?></td>
+                                    <td><img src="{{ url('website/upload/users/'.$d->img)}}" style="width:50px;object-fit: cover;"></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="{{url('manage_users/'.$d->id)}}" class="btn btn-primary">Delete</a>
