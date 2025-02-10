@@ -52,6 +52,7 @@
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="{{url('manage_products/'.$d->id)}}" class="btn btn-primary">Delete</a>
+                                        <a href="{{url('status_products/'.$d->id)}}" class="btn btn-primary">{{$d->status}}</a>
                                     </td>
                                 </tr>
                                 @endforeach

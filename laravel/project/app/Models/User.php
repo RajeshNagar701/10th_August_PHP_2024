@@ -12,6 +12,6 @@ class user extends Model
     //public $primarykey="cust_id";
 
     //public $timestamps=false;
-
+    protected $fillable = ['status'];
     use HasFactory;
 }

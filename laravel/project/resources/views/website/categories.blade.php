@@ -35,7 +35,7 @@
                             <img class="rounded-circle w-100 h-100" src="{{ url('admin/upload/category/'.$d->cate_img)}}" style="object-fit: cover;">
                         </div>
                         <h5 class="font-weight-bold mb-4">{{$d->cate_name}}</h5>
-                        <a href="" class="btn btn-sm btn-secondary">View Product</a>
+                        <a href="{{url('product_details/'.$d->id)}}" class="btn btn-sm btn-secondary">View Product</a>
                     </div>
                 </div>
             @endforeach 

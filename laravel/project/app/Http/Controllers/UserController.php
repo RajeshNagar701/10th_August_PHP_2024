@@ -169,4 +169,29 @@ class UserController extends Controller
         Alert::success('Delete Success', "User Delete Successful");
         return redirect('/manage_users');
     }
+
+    public function status($id)
+    {
+        $data=user::find($id);
+        if($data->status=="Block")
+        {
+            // update by arr then add in model.php => protected $fillable = ['status'];
+            //$user=user::find($id)->update(['status'=>"Unblock"]); 
+            
+            $data->status="Unblock";
+            $data->update();
+            Alert::success('Update Success', "User Unblock Successful");
+            return redirect('/manage_users');
+        }
+        else
+        {
+            //$user=user::find($id)->update(['status'=>"Block"]); 
+            $data->status="Block";
+            $data->update();
+            session()->pull('uname');
+            session()->pull('uid');
+            Alert::success('Update Success', "User Block Successful");
+            return redirect('/manage_users');
+        }
+    }
 }

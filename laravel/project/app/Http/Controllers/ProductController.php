@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use App\Models\category;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -13,9 +14,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('website.product_details');
+        $data=product::where('cate_id',$id)->where('status','Instock')->get();
+        return view('website.product_details',['data'=>$data]);
     }
 
     /**
@@ -107,5 +109,24 @@ class ProductController extends Controller
     {
         $data=product::find($id)->delete();
         return redirect('/manage_products');
+    }
+
+    public function status($id)
+    {
+        $data=product::find($id);
+        if($data->status=="Instock")
+        {
+            $data->status="Outstock";
+            $data->update();
+            Alert::success('Update Success', "Product Outstock Successful");
+            return redirect('/manage_products');
+        }
+        else
+        {
+            $data->status="Instock";
+            $data->update();
+            Alert::success('Update Success', "Product Instock Successful");
+            return redirect('/manage_products');
+        }
     }
 }

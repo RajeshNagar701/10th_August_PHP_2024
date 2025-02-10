@@ -54,7 +54,7 @@ Route::get('/service', function () {
 Route::get('/categories',[CategoryController::class,'index']);
 
 
-Route::get('/product_details',[ProductController::class,'index']);
+Route::get('/product_details/{id}',[ProductController::class,'index']);
 
 Route::get('*', function () {
     return view('website.pnf');
@@ -85,7 +85,7 @@ Route::get('/add_products',[ProductController::class,'create']);
 Route::post('/insert_product',[ProductController::class,'store']);
 Route::get('/manage_products',[ProductController::class,'show']);
 Route::get('/manage_products/{id}',[ProductController::class,'destroy']);
-
+Route::get('/status_products/{id}',[ProductController::class,'status']);
 
 
 Route::get('/manage_contacts',[ContactController::class,'show']);
@@ -93,3 +93,4 @@ Route::get('/manage_contacts/{id}',[ContactController::class,'destroy']);
 
 Route::get('manage_users',[UserController::class,'show']);
 Route::get('/manage_users/{id}',[UserController::class,'destroy']);
+Route::get('/status_users/{id}',[UserController::class,'status']);

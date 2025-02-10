@@ -34,9 +34,6 @@
                                     <th>Id#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Gender</th>
-                                    <th>Launguages</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -47,13 +44,11 @@
                                     <td><?php echo $d->id;?></td>
                                     <td><?php echo $d->name;?></td>
                                     <td><?php echo $d->email;?></td>
-                                    <td><?php echo $d->password;?></td>
-                                    <td><?php echo $d->gender;?></td>
-                                    <td><?php echo $d->lag;?></td>
                                     <td><img src="{{ url('website/upload/users/'.$d->img)}}" style="width:50px;object-fit: cover;"></td>
                                     <td>
                                         <a href="edit_categories" class="btn btn-primary">Edit</a>
                                         <a href="{{url('manage_users/'.$d->id)}}" class="btn btn-primary">Delete</a>
+                                        <a href="{{url('status_users/'.$d->id)}}" class="btn btn-primary">{{$d->status}}</a>
                                     </td>
                                 </tr>
                                 @endforeach
