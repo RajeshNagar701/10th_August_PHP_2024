@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary py-3 d-none d-md-block">
         <div class="container">
@@ -76,11 +77,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                  
+
                     <a href="admin-login" class="navbar-brand mx-5 d-none d-lg-block">
                         <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
                     </a>
-                   
+
                 </div>
             </nav>
         </div>
@@ -111,20 +112,21 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+
+                        <form action="{{url('/admin_auth')}}" method="post">
+                            @csrf
                             <div class="form-row">
-                               
+
                                 <div class="col-sm-12 control-group">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Password" required="required" data-validation-required-message="Please enter a Password" />
+                                <input type="text" name="password" class="form-control p-4" placeholder="Password" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                           
+
                             <div>
                                 <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Login</button>
                             </div>
@@ -134,8 +136,8 @@
             </div>
         </div>
     </div>
-   <!-- Footer Start -->
-   <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
         <div class="container text-center py-5">
             <div class="row">
                 <div class="col-12 mb-4">

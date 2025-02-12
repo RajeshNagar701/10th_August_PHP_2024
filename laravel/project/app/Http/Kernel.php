@@ -13,6 +13,7 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
+    // global middleare register here
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
@@ -28,6 +29,8 @@ class Kernel extends HttpKernel
      *
      * @var array<string, array<int, class-string|string>>
      */
+
+      // group middleare register here
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -43,6 +46,10 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        // register admin middleware as group middleware
+        'after_a'=> [ \App\Http\Middleware\admin_after_login::class],
+        'before_a'=>[\App\Http\Middleware\admin_before_login::class],
+
     ];
 
     /**
@@ -52,7 +59,12 @@ class Kernel extends HttpKernel
      *
      * @var array<string, class-string|string>
      */
+
+     // Route middleare register here
     protected $routeMiddleware = [
+        'after_u'=> \App\Http\Middleware\user_after_login::class, // register middleare here
+        'before_u'=> \App\Http\Middleware\user_before_login::class,
+
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

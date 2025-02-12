@@ -87,6 +87,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name'=> 'required|alpha:ascii|max:255',
+            'email'=> 'required|unique:users|emails',
+            'password'=> 'required:min:8|max:18',
+            'gender'=> 'required|in:Male,Female', 
+            'lag[]' => 'integer|boolean|min:0|max:2',
+            'img' => 'required|image',
+        ]);
+
         $data= new user;
         $data->name=$request->name;
         $data->email=$request->email;
@@ -116,7 +126,6 @@ class UserController extends Controller
         $data=user::all(); // fetch all data of user
         return view('admin.manage_users',["data"=>$data]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -128,7 +137,6 @@ class UserController extends Controller
         $data=user::find($id);
         return view('website.edit_user',['data'=>$data]);
     }
-
     /**
      * Update the specified resource in storage.
      *

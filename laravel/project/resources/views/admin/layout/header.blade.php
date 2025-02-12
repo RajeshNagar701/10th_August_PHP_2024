@@ -49,7 +49,7 @@ function active($currect_page){
                         <span class="text-white">|</span>
                         <a class="text-white px-3" href="">Help</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
+                        <a class="text-white pl-3" href="{{url('/admin_logout')}}">Logout</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">

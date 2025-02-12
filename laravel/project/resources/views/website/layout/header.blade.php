@@ -40,7 +40,7 @@
                         <a class="text-white px-3" href="">Help</a>
                         <span class="text-white">|</span>
                         @if(session()->has('uid'))
-                            <a class="tex   t-white pl-3" href="user_logout">Logout</a>
+                            <a class="text-white pl-3" href="user_logout">Logout</a>
                         @else
                             <a class="text-white pl-3" href="signup">Signup</a>
                         @endif
