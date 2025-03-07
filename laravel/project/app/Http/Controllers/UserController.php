@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\emailWelcome;
 
 class UserController extends Controller
 {
@@ -90,7 +93,7 @@ class UserController extends Controller
 
         $request->validate([
             'name'=> 'required|alpha:ascii|max:255',
-            'email'=> 'required|unique:users|emails',
+            'email'=> 'required|unique:users|email',
             'password'=> 'required:min:8|max:18',
             'gender'=> 'required|in:Male,Female', 
             'lag[]' => 'integer|boolean|min:0|max:2',
@@ -98,8 +101,8 @@ class UserController extends Controller
         ]);
 
         $data= new user;
-        $data->name=$request->name;
-        $data->email=$request->email;
+  $name=$data->name=$request->name;
+ $email=$data->email=$request->email;
         $data->password=Hash::make($request->password);
         $data->lag=implode(",",$request->lag);
         $data->gender=$request->gender;
@@ -111,6 +114,11 @@ class UserController extends Controller
         $data->img=$filename;
 
         $data->save();
+        
+
+        $email_data=array("name"=>$name,"email"=>$email);
+        Mail::to($email)->send(new emailWelcome($email_data));
+
         Alert::success('Signup Success', "User Signup Successful");
         return redirect('/signup');
     }

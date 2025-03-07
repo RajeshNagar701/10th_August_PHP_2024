@@ -118,16 +118,19 @@
                             <div class="form-row">
 
                                 <div class="col-sm-12 control-group">
-                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" />
+                                    <input type="email" value="<?php if(isset($_COOKIE['ecookie'])) { echo $_COOKIE['ecookie']; }?>" name="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" name="password" class="form-control p-4" placeholder="Password" required="required" />
+                                <input type="text" value="<?php  if(Cookie::get('pcookie')) { echo Cookie::get('pcookie'); }; ?>" name="password" class="form-control p-4" placeholder="Password" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
+                            <div class="control-group mb-5">
+                                Remember Me : <input type="checkbox" name="remember" />
+                            </div>
 
-                            <div>
+                            <div >
                                 <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Login</button>
                             </div>
                         </form>

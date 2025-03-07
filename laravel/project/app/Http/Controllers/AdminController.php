@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 
 class AdminController extends Controller
 {
@@ -31,6 +32,13 @@ class AdminController extends Controller
                 session()->put('aname', $data->name);
                 session()->put('aid', $data->id);
              
+                // create cookie
+                if(isset($request->remember))
+                {
+                    setcookie('ecookie',$data->email,time()+60); // second
+                    Cookie::queue(Cookie::make('pcookie',$request->password,1)); // minutes
+                }
+
                 Alert::success('Login Success', "Admin Login Successful");
                 return redirect('/dashboard');
             } else {

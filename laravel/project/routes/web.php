@@ -99,3 +99,7 @@ Route::group(['middleware'=>['after_a']],function(){ // apply group middleware
     Route::get('/status_users/{id}',[UserController::class,'status']);
 
 });
+
+Route::get('/helpers', function () {
+    return view('website.helpers');
+});

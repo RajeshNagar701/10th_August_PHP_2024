@@ -54,8 +54,10 @@ class ContactController extends Controller
      */
     public function show(contact $contact)
     {
-        $data=contact::all();
-        return view('admin.manage_contacts',['data'=>$data]);
+
+        custome_date('2025-02-17','d/m/y');
+        //$data=contact::all();
+        //return view('admin.manage_contacts',['data'=>$data]);
     }
 
     /**
